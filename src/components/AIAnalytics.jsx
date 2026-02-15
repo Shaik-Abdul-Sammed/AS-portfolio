@@ -126,10 +126,10 @@ const AIAnalytics = () => {
                             </div>
 
                             {/* Radar Chart */}
-                            <div className="mt-12 w-full h-[300px] relative group/radar">
+                            <div className="mt-12 w-full h-[300px] min-h-[300px] min-w-0 relative group/radar">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-600/5 rounded-full blur-3xl opacity-0 group-hover/radar:opacity-100 transition-opacity duration-1000" />
                                 {mounted && (
-                                    <ResponsiveContainer id="ai-iq-radar" width="100%" height="100%" minHeight={1}>
+                                    <ResponsiveContainer id="ai-iq-radar" width="100%" height="100%" minHeight={1} minWidth={0}>
                                         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={analytics.radarData}>
                                             <PolarGrid stroke="#1e293b" />
                                             <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 'bold' }} />

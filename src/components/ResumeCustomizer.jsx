@@ -269,9 +269,9 @@ const ResumeCustomizer = () => {
                                                     <span>Neural Relevance Mesh</span>
                                                     <span className="text-cyan-500/50 animate-pulse">STREAMING_ACTV</span>
                                                 </div>
-                                                <div className="h-48 w-full relative">
+                                                <div className="h-48 min-h-48 w-full min-w-0 relative">
                                                     {mounted && (
-                                                        <ResponsiveContainer id="resume-relevance-radar" width="100%" height="100%" minHeight={1}>
+                                                        <ResponsiveContainer id="resume-relevance-radar" width="100%" height="100%" minHeight={1} minWidth={0}>
                                                             <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
                                                                 <PolarGrid stroke="#1e293b" />
                                                                 <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 8, fontWeight: 'bold' }} />
