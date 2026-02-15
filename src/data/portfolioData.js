@@ -8,7 +8,7 @@ export const portfolioData = {
         phone: "+91 9010150809",
         location: "Dhone, Nandyal (Present) | RGUKT RKV (College)",
         summary: "E2 CSE Student at RGUKT RKV exploring DevOps Security and FinTech. Passionate about automating secure pipelines and building intelligent infrastructure.",
-        profileImage: "/profile.jpg",
+        profileImage: "/assets/PASSPHOTO.jpg",
         socials: [
             { name: 'GitHub', icon: Github, href: 'https://github.com/Abdul9010150809' },
             { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/' },
