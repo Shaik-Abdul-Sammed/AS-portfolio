@@ -10,6 +10,7 @@ import CustomCursor from './components/CustomCursor';
 const Navbar = lazy(() => import('./components/Navbar'));
 const Hero = lazy(() => import('./components/Hero'));
 const About = lazy(() => import('./components/About'));
+const Identity = lazy(() => import('./components/Identity'));
 const Skills = lazy(() => import('./components/Skills'));
 const Projects = lazy(() => import('./components/Projects'));
 const AIAnalytics = lazy(() => import('./components/AIAnalytics'));
@@ -47,6 +48,7 @@ export default function App() {
                 <main>
                     <Hero />
                     <About />
+                    <Identity />
                     <Skills />
                     <AIAnalytics />
                     <ResumeCustomizer />

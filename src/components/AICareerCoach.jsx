@@ -8,7 +8,7 @@ const AICareerCoach = () => {
     const [messages, setMessages] = useState([
         {
             role: 'bot',
-            content: "Hi! I'm your AI Career Coach. I've analyzed Shaik's portfolio and can help you with hiring him, learning about his tech stack, or getting career advice based on his journey. What's on your mind?",
+            content: "Hi! I'm your AI Career Coach. I've analyzed Abdul Sammed's (born Sept 22, 2006) portfolio. I can help you with hiring him, learning about his hobbies like Cyber-research, or exploring his top projects like Vedascan-AI. What's on your mind?",
             type: 'text'
         }
     ]);
@@ -40,17 +40,23 @@ const AICareerCoach = () => {
 
             const query = input.toLowerCase();
             if (query.includes('hire') || query.includes('contact')) {
-                botResponse.content = `Shaik is currently open to DevOps and FinTech roles. ${personalInsights.motivation} You can reach him at ${personal.email} or use the contact form below!`;
+                botResponse.content = `Abdul is currently open to DevOps and FinTech roles. ${personalInsights.motivation} You can reach him at ${personal.email} or use the contact form below!`;
             } else if (query.includes('stack') || query.includes('tech')) {
-                botResponse.content = `Shaik specializes in Python, React, and DevOps Security. His favorite tools are Docker, GitHub Actions, and FastAPI. He is also exploring ${personalInsights.interests.join(', ')}.`;
+                botResponse.content = `Abdul specializes in Python, React, and DevOps Security. His favorite tools are Docker, GitHub Actions, and FastAPI. He is also exploring ${personalInsights.interests.join(', ')}.`;
             } else if (query.includes('project') || query.includes('work')) {
-                botResponse.content = `I recommend checking out CAPSTACK for FinTech or DevOps-Fraud-Shield for Security. Both showcase his AI integration skills and align with his goal of ${personalInsights.careerGoals}.`;
+                botResponse.content = `Check out Vedascan-AI for Medical diagnosis or CAPSTACK for FinTech. Both showcase his AI integration skills. I can take you to the Projects section if you'd like!`;
+            } else if (query.includes('iq') || query.includes('score') || query.includes('analytics')) {
+                botResponse.content = `Abdul's Portfolio IQ is an 88% weighted composite. It's based on Technical Depth, Project Impact (like his SIH Top 50 finish), and Market Readiness. You can see the full breakdown in the Analytics section.`;
+            } else if (query.includes('hobby') || query.includes('hobbies') || query.includes('interest')) {
+                botResponse.content = `Beyond tech, Abdul is into ${personal.hobbies.join(', ')}. He's a competitive spirit who loves tech blogging and open source!`;
+            } else if (query.includes('dob') || query.includes('age') || query.includes('born')) {
+                botResponse.content = `Abdul was born on September 22, 2006. He's a young, highly driven engineer with a focus on Secure AI.`;
             } else if (query.includes('advice') || query.includes('learn') || query.includes('philosophy')) {
                 botResponse.content = `${personalInsights.philosophy} He suggests focusing on automating security early in the dev cycle. It's a high-demand skill in the market!`;
             } else if (query.includes('where') || query.includes('from') || query.includes('location')) {
-                botResponse.content = `Shaik is originally from ${personalInsights.origin}. He's currently pursuing his B.Tech at RGUKT Idupulapaya.`;
+                botResponse.content = `Abdul is originally from ${personalInsights.origin}. He's currently pursuing his B.Tech at RGUKT Idupulapaya.`;
             } else {
-                botResponse.content = `That's an interesting question about Shaik! His experience in SIH and his focus on secure AI systems make him a versatile candidate. ${personalInsights.motivation}`;
+                botResponse.content = `That's an interesting question! Abdul's experience in SIH and his focus on secure AI systems make him a versatile candidate. ${personalInsights.motivation}`;
             }
 
             setMessages(prev => [...prev, botResponse]);

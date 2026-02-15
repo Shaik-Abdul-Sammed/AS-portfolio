@@ -104,14 +104,32 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="flex gap-6 items-center p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                                <div className="p-4 rounded-2xl bg-pink-600/10 text-pink-400 border border-pink-500/20 group-hover:scale-110 transition-transform">
+                            <div className="flex gap-6 items-center p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-pink-500/30 transition-all group relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="p-4 rounded-2xl bg-pink-600/10 text-pink-400 border border-pink-500/20 group-hover:scale-110 transition-transform relative z-10">
                                     <MapPin size={24} />
                                 </div>
-                                <div>
+                                <div className="relative z-10">
                                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Location</h4>
                                     <p className="text-lg font-bold text-white tracking-tight">{personal.location}</p>
                                 </div>
+                            </div>
+
+                            {/* Dynamically reveal socials from portfolioData */}
+                            <div className="grid grid-cols-4 gap-4 mt-8">
+                                {personal.socials.map((social, i) => (
+                                    <Magnetic key={i} strength={0.3}>
+                                        <a
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-5 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-cyan-500/50 transition-all flex items-center justify-center group"
+                                            title={social.name}
+                                        >
+                                            <social.icon size={24} className="group-hover:scale-125 transition-transform" />
+                                        </a>
+                                    </Magnetic>
+                                ))}
                             </div>
                         </div>
                     </motion.div>

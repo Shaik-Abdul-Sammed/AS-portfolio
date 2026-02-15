@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileDown, CheckCircle2, Layout, Sliders, Send, User, Sparkles, Target, Zap } from 'lucide-react';
+import { FileDown, CheckCircle2, Sliders, Sparkles, Target, Zap } from 'lucide-react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { portfolioData } from '../data/portfolioData';
 
@@ -8,17 +8,23 @@ const ResumeCustomizer = () => {
     const [selectedSections, setSelectedSections] = useState(['Personal', 'Experience', 'Projects', 'Skills']);
     const [targetRole, setTargetRole] = useState('Fullstack Developer');
     const [isGenerating, setIsGenerating] = useState(false);
+    const [isGenerated, setIsGenerated] = useState(false);
     const [matchScore, setMatchScore] = useState(85);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const sectionsList = ['Personal', 'Experience', 'Education', 'Skills', 'Projects', 'Certifications', 'Achievements'];
     const roles = ['Fullstack Developer', 'DevOps Engineer', 'Security Analyst', 'AI/ML Engineer'];
 
     // Mock role-based matching logic
     const roleBenchmarks = {
-        'Fullstack Developer': { Frontend: 95, Backend: 85, Security: 80, DevOps: 75, Database: 90 },
-        'DevOps Engineer': { Frontend: 60, Backend: 85, Security: 90, DevOps: 95, Database: 80 },
-        'Security Analyst': { Frontend: 50, Backend: 80, Security: 98, DevOps: 85, Database: 75 },
-        'AI/ML Engineer': { Frontend: 55, Backend: 90, Security: 75, DevOps: 70, Database: 95 },
+        'Fullstack Developer': { Frontend: 95, Backend: 85, Security: 80, DevOps: 75, Database: 90, keywords: ['React', 'Node.js', 'Express', 'JWT', 'REST API', 'PostgreSQL'] },
+        'DevOps Engineer': { Frontend: 60, Backend: 85, Security: 90, DevOps: 95, Database: 80, keywords: ['Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Prometheus', 'Linux'] },
+        'Security Analyst': { Frontend: 50, Backend: 80, Security: 98, DevOps: 85, Database: 75, keywords: ['Nmap', 'Metasploit', 'SOC', 'Firewalls', 'Wireshark', 'Burp Suite'] },
+        'AI/ML Engineer': { Frontend: 55, Backend: 90, Security: 75, DevOps: 70, Database: 95, keywords: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'NLP', 'Computer Vision', 'FastAPI'] },
     };
 
     useEffect(() => {
@@ -35,10 +41,11 @@ const ResumeCustomizer = () => {
 
     const handleGenerate = () => {
         setIsGenerating(true);
+        setIsGenerated(false);
         setTimeout(() => {
             setIsGenerating(false);
-            alert('AI-Tailored Resume generated! (This would trigger a PDF download with filtered sections optimized for: ' + targetRole + ')');
-        }, 2000);
+            setIsGenerated(true);
+        }, 3000);
     };
 
     const radarData = Object.entries(roleBenchmarks[targetRole]).map(([subject, B]) => ({
@@ -112,7 +119,7 @@ const ResumeCustomizer = () => {
                                     </div>
                                 </div>
 
-                                <div className="p-6 rounded-2xl bg-slate-900/30 border border-slate-800 flex items-center gap-6">
+                                <div className="p-6 rounded-2xl bg-cyan-500/5 border border-cyan-500/20 glass flex items-center gap-6">
                                     <div className="relative w-16 h-16 flex-shrink-0">
                                         <svg className="w-full h-full transform -rotate-90">
                                             <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth="4" fill="transparent" className="text-slate-800" />
@@ -126,7 +133,7 @@ const ResumeCustomizer = () => {
                                                 strokeDasharray={176}
                                                 initial={{ strokeDashoffset: 176 }}
                                                 animate={{ strokeDashoffset: 176 - (176 * matchScore) / 100 }}
-                                                className="text-cyan-500"
+                                                className="text-cyan-400"
                                             />
                                         </svg>
                                         <div className="absolute inset-0 flex items-center justify-center text-sm font-black text-white">
@@ -134,23 +141,86 @@ const ResumeCustomizer = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="text-xs font-bold text-white mb-1">ATS Optimization Score</div>
-                                        <div className="text-[10px] text-slate-500 font-medium leading-tight">
-                                            Your profile has a {(matchScore > 90) ? 'Global Elite' : 'Strong'} match with {targetRole} requirements.
+                                        <div className="text-xs font-bold text-white mb-1 tracking-tight flex items-center gap-2">
+                                            ATS Neural Optimization <Sparkles size={14} className="text-cyan-400" />
                                         </div>
+                                        <div className="text-[10px] text-slate-400 font-medium leading-tight">
+                                            Current heuristic: <span className="text-cyan-400">{matchScore > 90 ? 'ELITE_MATCH' : 'HIGH_MATCH'}</span>. Optimized for <span className="text-white font-bold">{targetRole}</span> vectors.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Keyword Diagnostic */}
+                                <div className="space-y-4">
+                                    <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Heuristic Alignment</div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {roleBenchmarks[targetRole].keywords.map((kw, i) => (
+                                            <div key={kw} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/50 border border-slate-800 text-[10px]">
+                                                {i % 2 === 0 ? <CheckCircle2 size={10} className="text-emerald-500" /> : <Zap size={10} className="text-cyan-500" />}
+                                                <span className="text-slate-300">{kw}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="mt-12">
-                                <button
-                                    onClick={handleGenerate}
-                                    disabled={isGenerating}
-                                    className="w-full md:w-auto px-10 py-5 rounded-2xl bg-cyan-600 text-white font-black uppercase tracking-[0.2em] shadow-2xl shadow-cyan-900/40 hover:bg-cyan-500 hover:-translate-y-1 transition-all disabled:opacity-50 flex items-center justify-center gap-3"
-                                >
-                                    {isGenerating ? "Optimizing..." : "Generate Tailored Resume"}
-                                    {!isGenerating && <FileDown size={20} />}
-                                </button>
+                            <div className="mt-12 space-y-4">
+                                <AnimatePresence mode="wait">
+                                    {!isGenerated ? (
+                                        <motion.button
+                                            key="generate-btn"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            onClick={handleGenerate}
+                                            disabled={isGenerating}
+                                            className="w-full md:w-auto px-10 py-5 rounded-2xl bg-cyan-600 text-white font-black uppercase tracking-[0.2em] shadow-2xl shadow-cyan-900/40 hover:bg-cyan-500 hover:-translate-y-1 transition-all disabled:opacity-50 flex items-center justify-center gap-3 relative overflow-hidden group"
+                                        >
+                                            <span className="relative z-10">{isGenerating ? "Neural Optimization..." : "Generate Tailored Resume"}</span>
+                                            {!isGenerating && <Zap size={20} className="relative z-10 animate-pulse text-yellow-400" />}
+                                            {isGenerating && (
+                                                <motion.div
+                                                    className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-purple-600 to-cyan-600"
+                                                    animate={{ x: ['-100%', '100%'] }}
+                                                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                                                />
+                                            )}
+                                        </motion.button>
+                                    ) : (
+                                        <motion.div
+                                            key="download-btn"
+                                            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                                            className="flex flex-col md:flex-row gap-4"
+                                        >
+                                            <a
+                                                href={portfolioData.personal.resumeLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-grow px-10 py-5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black uppercase tracking-[0.2em] shadow-2xl shadow-emerald-900/40 hover:from-emerald-500 hover:to-teal-500 hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
+                                            >
+                                                Download {targetRole} Resume
+                                                <FileDown size={20} />
+                                            </a>
+                                            <button
+                                                onClick={() => setIsGenerated(false)}
+                                                className="px-8 py-5 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 font-bold uppercase tracking-widest hover:text-white transition-all"
+                                            >
+                                                Re-optimize
+                                            </button>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {isGenerated && (
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        className="text-[10px] text-emerald-500 font-bold uppercase tracking-[0.3em] flex items-center gap-2"
+                                    >
+                                        <CheckCircle2 size={12} /> Optimization Engine Synchronized
+                                    </motion.p>
+                                )}
                             </div>
                         </motion.div>
                     </div>
@@ -168,8 +238,8 @@ const ResumeCustomizer = () => {
                                 <motion.div
                                     initial={{ top: '0%' }}
                                     animate={{ top: '100%' }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                                    className="absolute left-0 right-0 h-1 bg-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.8)] z-10"
+                                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                    className="absolute left-0 right-0 h-4 bg-gradient-to-b from-cyan-500/50 to-transparent border-t border-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.6)] z-20 pointer-events-none"
                                 />
                             )}
 
@@ -194,16 +264,21 @@ const ResumeCustomizer = () => {
                                                 </motion.div>
                                             )}
 
-                                            <motion.div key={`radar-${targetRole}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-40 w-full bg-slate-900/30 rounded-2xl border border-slate-800/50 p-4 relative overflow-hidden">
-                                                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4">Role Relevance Radar</div>
-                                                <div className="absolute inset-0 pt-6">
-                                                    <ResponsiveContainer id="resume-relevance-radar" width="99%" aspect={1.8} minWidth={0}>
-                                                        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={radarData}>
-                                                            <PolarGrid stroke="#1e293b" />
-                                                            <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 8, fontWeight: 'bold' }} />
-                                                            <Radar name="Match" dataKey="B" stroke="#06b6d4" fill="#06b6d4" fillOpacity={0.2} />
-                                                        </RadarChart>
-                                                    </ResponsiveContainer>
+                                            <motion.div key={`radar-${targetRole}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full bg-slate-900/30 rounded-2xl border border-slate-800/50 p-4 transition-all glass group/radar">
+                                                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4 flex justify-between">
+                                                    <span>Neural Relevance Mesh</span>
+                                                    <span className="text-cyan-500/50 animate-pulse">STREAMING_ACTV</span>
+                                                </div>
+                                                <div className="h-48 w-full relative">
+                                                    {mounted && (
+                                                        <ResponsiveContainer id="resume-relevance-radar" width="100%" height="100%" minHeight={1}>
+                                                            <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
+                                                                <PolarGrid stroke="#1e293b" />
+                                                                <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 8, fontWeight: 'bold' }} />
+                                                                <Radar name="Match" dataKey="B" stroke="#06b6d4" fill="#06b6d4" fillOpacity={0.2} />
+                                                            </RadarChart>
+                                                        </ResponsiveContainer>
+                                                    )}
                                                 </div>
                                             </motion.div>
 

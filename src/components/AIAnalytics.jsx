@@ -14,6 +14,11 @@ import GithubActivity from './GithubActivity';
 
 const AIAnalytics = () => {
     const { analytics } = portfolioData;
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const getScoreColor = (score) => {
         if (score >= 90) return 'text-cyan-400';
@@ -93,37 +98,58 @@ const AIAnalytics = () => {
                                     </p>
                                     <div className="grid grid-cols-2 gap-4">
                                         {Object.entries(analytics.benchmarks).map(([key, val]) => (
-                                            <div key={key} className="p-3 rounded-xl bg-slate-950/50 border border-slate-800 group/item hover:border-cyan-500/30 transition-all">
+                                            <div key={key} className="p-3 rounded-xl bg-slate-950/50 border border-slate-800 group/item hover:border-cyan-500/30 transition-all cursor-help relative">
                                                 <div className="text-[10px] text-slate-500 uppercase font-black mb-1 group-hover/item:text-cyan-400">{key}</div>
                                                 <div className="text-lg font-bold text-white">{val}%</div>
+                                                {/* Basis Tooltip */}
+                                                <div className="absolute bottom-full left-0 mb-2 w-48 p-2 bg-slate-900 border border-slate-800 rounded-lg opacity-0 group-hover/item:opacity-100 pointer-events-none transition-opacity z-50 shadow-2xl">
+                                                    <div className="text-[8px] text-cyan-400 uppercase font-black mb-1">Scoring Basis</div>
+                                                    <div className="text-[9px] text-slate-400 leading-tight">
+                                                        {key === 'projects' && "Weighted by repository health, complexity, and user impact metrics."}
+                                                        {key === 'skills' && "Calculated via neural mapping of language proficiency and concept mastery."}
+                                                        {key === 'impact' && "Based on derived performance gains and real-world utility benchmarks."}
+                                                        {key === 'presentation' && "Evaluates design consistency, accessibility, and professional layout."}
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
+                                    </div>
+                                    <div className="pt-4 border-t border-slate-800/50">
+                                        <div className="text-[8px] font-black text-slate-600 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            <Shield size={10} className="text-slate-600" /> Neural Verification Engine Active
+                                        </div>
+                                        <p className="text-[10px] text-slate-500 leading-relaxed italic">
+                                            This IQ score is a dynamic weighted composite of <span className="text-slate-400">Technical Depth (40%)</span>, <span className="text-slate-400">Project Impact (30%)</span>, and <span className="text-slate-400">Market Readiness (30%)</span>.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Radar Chart */}
-                            <div className="mt-12 w-full relative">
-                                <ResponsiveContainer id="ai-iq-radar" width="99%" aspect={1.5} minWidth={0}>
-                                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={analytics.radarData}>
-                                        <PolarGrid stroke="#1e293b" />
-                                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 'bold' }} />
-                                        <Radar
-                                            name="Current"
-                                            dataKey="A"
-                                            stroke="#06b6d4"
-                                            fill="#06b6d4"
-                                            fillOpacity={0.3}
-                                        />
-                                        <Radar
-                                            name="Goal"
-                                            dataKey="B"
-                                            stroke="#a855f7"
-                                            fill="#a855f7"
-                                            fillOpacity={0.1}
-                                        />
-                                    </RadarChart>
-                                </ResponsiveContainer>
+                            <div className="mt-12 w-full h-[300px] relative group/radar">
+                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-600/5 rounded-full blur-3xl opacity-0 group-hover/radar:opacity-100 transition-opacity duration-1000" />
+                                {mounted && (
+                                    <ResponsiveContainer id="ai-iq-radar" width="100%" height="100%" minHeight={1}>
+                                        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={analytics.radarData}>
+                                            <PolarGrid stroke="#1e293b" />
+                                            <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 'bold' }} />
+                                            <Radar
+                                                name="Current"
+                                                dataKey="A"
+                                                stroke="#06b6d4"
+                                                fill="#06b6d4"
+                                                fillOpacity={0.3}
+                                            />
+                                            <Radar
+                                                name="Goal"
+                                                dataKey="B"
+                                                stroke="#a855f7"
+                                                fill="#a855f7"
+                                                fillOpacity={0.1}
+                                            />
+                                        </RadarChart>
+                                    </ResponsiveContainer>
+                                )}
                             </div>
                         </motion.div>
                     </div>

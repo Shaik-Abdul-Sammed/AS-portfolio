@@ -96,7 +96,7 @@ const Hero = () => {
                             <CharacterReveal text={personal.name.split(' ')[0]} className="block" />
                             <CharacterReveal
                                 text={personal.name.split(' ').slice(1).join(' ')}
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 block"
+                                className="text-gradient block"
                             />
                         </h1>
 
@@ -148,7 +148,7 @@ const Hero = () => {
                 >
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-                        <div className="relative p-2 rounded-[3.2rem] bg-slate-900 border border-slate-800 backdrop-blur-3xl overflow-hidden aspect-[4/5] max-w-sm ml-auto shadow-2xl shadow-cyan-500/10 transition-all duration-500 group-hover:shadow-cyan-500/20">
+                        <div className="relative p-2 rounded-[3.2rem] bg-slate-900 border border-slate-800 glass-morphism overflow-hidden aspect-[4/5] max-w-sm ml-auto shadow-2xl transition-all duration-500 hover:shadow-cyan-500/20">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 animate-pulse" />
                             <img
                                 src={personal.profileImage}
@@ -177,7 +177,7 @@ const Hero = () => {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -top-6 -right-6 p-4 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-xl shadow-2xl"
+                            className="absolute -top-6 -right-6 p-4 rounded-2xl glass border border-white/10 shadow-2xl"
                         >
                             <div className="text-[10px] text-slate-500 uppercase font-black mb-1">Hackathons</div>
                             <div className="text-sm font-bold text-white">Top 50 SIH</div>
@@ -186,7 +186,7 @@ const Hero = () => {
                         <motion.div
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                            className="absolute -bottom-6 -left-6 p-4 rounded-2xl bg-slate-800/80 border border-slate-700 backdrop-blur-xl shadow-2xl"
+                            className="absolute -bottom-6 -left-6 p-4 rounded-2xl glass border border-white/10 shadow-2xl"
                         >
                             <div className="text-[10px] text-slate-500 uppercase font-black mb-1">Open Source</div>
                             <div className="text-sm font-bold text-white">GSSoC '25</div>

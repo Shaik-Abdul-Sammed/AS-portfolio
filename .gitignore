@@ -45,6 +45,10 @@ brain/
 implementation_plan.md
 walkthrough.md
 task.md
+.agent/
+*.agent/
+
+# Media and icons
 pwa_icon_sammed_portfolio_*.png
 media__*.jpg
 media__*.png

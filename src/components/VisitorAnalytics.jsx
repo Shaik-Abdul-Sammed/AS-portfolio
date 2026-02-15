@@ -4,6 +4,12 @@ import { Users, Eye, MousePointer2, Clock, Globe, BarChart3, TrendingUp } from '
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 const VisitorAnalytics = () => {
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const data = [
         { name: 'Mon', visits: 400, recruiters: 24 },
         { name: 'Tue', visits: 300, recruiters: 13 },
@@ -56,31 +62,33 @@ const VisitorAnalytics = () => {
                 </div>
             </div>
 
-            <div className="w-full relative">
-                <ResponsiveContainer id="visitor-area-chart" width="99%" aspect={2.5} minWidth={0}>
-                    <AreaChart data={data}>
-                        <defs>
-                            <linearGradient id="colorVisits" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#ec4899" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#ec4899" stopOpacity={0} />
-                            </linearGradient>
-                            <linearGradient id="colorRecruiters" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#a855f7" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#a855f7" stopOpacity={0} />
-                            </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                        <XAxis dataKey="name" stroke="#64748b" fontSize={10} tickLine={false} axisLine={false} />
-                        <YAxis hide />
-                        <Tooltip
-                            contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '12px', fontSize: '10px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.4)' }}
-                            itemStyle={{ color: '#f1f5f9' }}
-                            cursor={{ stroke: '#1e293b', strokeWidth: 1 }}
-                        />
-                        <Area type="monotone" dataKey="visits" stroke="#ec4899" fillOpacity={1} fill="url(#colorVisits)" strokeWidth={3} />
-                        <Area type="monotone" dataKey="recruiters" stroke="#a855f7" fillOpacity={1} fill="url(#colorRecruiters)" strokeWidth={3} />
-                    </AreaChart>
-                </ResponsiveContainer>
+            <div className="w-full h-[250px] relative">
+                {mounted && (
+                    <ResponsiveContainer id="visitor-area-chart" width="100%" height="100%" minHeight={1}>
+                        <AreaChart data={data}>
+                            <defs>
+                                <linearGradient id="colorVisits" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#ec4899" stopOpacity={0.3} />
+                                    <stop offset="95%" stopColor="#ec4899" stopOpacity={0} />
+                                </linearGradient>
+                                <linearGradient id="colorRecruiters" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#a855f7" stopOpacity={0.3} />
+                                    <stop offset="95%" stopColor="#a855f7" stopOpacity={0} />
+                                </linearGradient>
+                            </defs>
+                            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+                            <XAxis dataKey="name" stroke="#64748b" fontSize={10} tickLine={false} axisLine={false} />
+                            <YAxis hide />
+                            <Tooltip
+                                contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '12px', fontSize: '10px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.4)' }}
+                                itemStyle={{ color: '#f1f5f9' }}
+                                cursor={{ stroke: '#1e293b', strokeWidth: 1 }}
+                            />
+                            <Area type="monotone" dataKey="visits" stroke="#ec4899" fillOpacity={1} fill="url(#colorVisits)" strokeWidth={3} />
+                            <Area type="monotone" dataKey="recruiters" stroke="#a855f7" fillOpacity={1} fill="url(#colorRecruiters)" strokeWidth={3} />
+                        </AreaChart>
+                    </ResponsiveContainer>
+                )}
             </div>
         </div>
     );

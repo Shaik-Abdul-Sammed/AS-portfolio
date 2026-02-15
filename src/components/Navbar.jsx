@@ -105,13 +105,14 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center gap-2">
                     {/* Quick Socials */}
                     <div className="flex items-center gap-1 mr-2 border-r border-slate-800 pr-4">
-                        {portfolioData.personal.socials.slice(0, 2).map((social, i) => (
+                        {portfolioData.personal.socials.map((social, i) => (
                             <Magnetic key={i} strength={0.2}>
                                 <a
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-2 text-slate-500 hover:text-cyan-400 transition-colors"
+                                    title={social.name}
                                 >
                                     <social.icon size={16} />
                                 </a>
@@ -121,8 +122,9 @@ const Navbar = () => {
 
                     <Magnetic strength={0.3}>
                         <a
-                            href="/resume.pdf"
+                            href={portfolioData.personal.resumeLink}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="px-5 py-2.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-white text-[10px] font-black uppercase tracking-widest transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
                         >
                             Resume
@@ -162,7 +164,9 @@ const Navbar = () => {
                                 </button>
                             ))}
                             <a
-                                href="/resume.pdf"
+                                href={portfolioData.personal.resumeLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full py-4 rounded-2xl bg-cyan-600 text-center text-white text-xl font-bold uppercase tracking-widest shadow-lg shadow-cyan-900/20"
                             >
                                 Download Resume

@@ -14,7 +14,11 @@ export const portfolioData = {
             { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/' },
             { name: 'LeetCode', icon: Code2, href: 'https://leetcode.com/' },
             { name: 'HackerRank', icon: Terminal, href: 'https://hackerrank.com/' }
-        ]
+        ],
+        resumeLink: "https://drive.google.com/file/d/10hG37eS_C_D_mV7dFEP3Y-nTe5UZTCvN/view?usp=drivesdk",
+        dob: "22/09/2006",
+        hobbies: ["Cyber-research", "Open Source Contributing", "Tech Blogging", "Competitive Coding"],
+        languages: ["English", "Telugu", "Hindi"]
     },
     education: [
         {
@@ -111,6 +115,48 @@ export const portfolioData = {
                 perfGain: "Instant interaction",
                 users: "Game Project",
                 complexity: 40
+            }
+        },
+        {
+            title: "Vedascan-AI",
+            description: "Medical AI diagnostic system for analyzing health records and predicting risks.",
+            tech: ["React", "FastAPI", "TensorFlow", "PostgreSQL"],
+            github: "https://github.com/Abdul9010150809/Vedascan-AI",
+            live: "#",
+            category: "Medical AI",
+            impact: {
+                stars: 18,
+                perfGain: "92% prediction accuracy",
+                users: "Researchers",
+                complexity: 94
+            }
+        },
+        {
+            title: "cropyield-pro",
+            description: "Agri-tech platform for predicting crop yields using satellite data and AI.",
+            tech: ["Python", "Flask", "Azure ML", "Leaflet"],
+            github: "https://github.com/Abdul9010150809/cropyield-pro",
+            live: "#",
+            category: "Agri-Tech",
+            impact: {
+                stars: 15,
+                perfGain: "30% yield optimization",
+                users: "Local Farmers Pilot",
+                complexity: 89
+            }
+        },
+        {
+            title: "GitFolioScore",
+            description: "DevOps tool to calculate repository health and contributor impact metrics.",
+            tech: ["Node.js", "GitHub API", "Redis", "Chart.js"],
+            github: "https://github.com/Abdul9010150809/GitFolioScore",
+            live: "#",
+            category: "DevOps",
+            impact: {
+                stars: 22,
+                perfGain: "Real-time health auditing",
+                users: "Maintainers",
+                complexity: 85
             }
         }
     ],
