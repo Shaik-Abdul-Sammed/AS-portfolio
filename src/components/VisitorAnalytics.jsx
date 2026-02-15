@@ -64,7 +64,7 @@ const VisitorAnalytics = () => {
 
             <div className="w-full h-[250px] min-h-[250px] min-w-0 relative">
                 {mounted && (
-                    <ResponsiveContainer id="visitor-area-chart" width="100%" height="100%" minHeight={1} minWidth={0}>
+                    <ResponsiveContainer id="visitor-area-chart" width="100%" height={250} minHeight={250} minWidth={0}>
                         <AreaChart data={data}>
                             <defs>
                                 <linearGradient id="colorVisits" x1="0" y1="0" x2="0" y2="1">

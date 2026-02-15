@@ -33,9 +33,14 @@ const Contact = () => {
         setLoading(true);
 
         try {
-            // Simulate API call
-            await new Promise(r => setTimeout(r, 1500));
-            toast.success('Message sent! I will get back to you soon.', {
+            const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+            );
+            const mailtoLink = `mailto:${personal.email}?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+
+            toast.success('Opening your email client...', {
                 style: {
                     background: '#0f172a',
                     color: '#fff',

@@ -6,7 +6,7 @@ export const portfolioData = {
         title: "Aspiring AI & Security Engineer",
         email: "samm41236@gmail.com",
         phone: "+91 9010150809",
-        location: "Dhone, Nandyal (Present) | RGUKT RKV (College)",
+        location: "Permanent: Dhone, Nandyal Dist | Present: Rajiv Gandhi University of Knowledge Technologies, RK Valley",
         summary: "E2 CSE Student at RGUKT RKV exploring DevOps Security and FinTech. Passionate about automating secure pipelines and building intelligent infrastructure.",
         profileImage: "/assets/PASSPHOTO.jpg",
         socials: [
@@ -15,7 +15,7 @@ export const portfolioData = {
             { name: 'LeetCode', icon: Code2, href: 'https://leetcode.com/' },
             { name: 'HackerRank', icon: Terminal, href: 'https://hackerrank.com/' }
         ],
-        resumeLink: "https://drive.google.com/file/d/10hG37eS_C_D_mV7dFEP3Y-nTe5UZTCvN/view?usp=drivesdk",
+        resumeLink: "https://drive.google.com/uc?export=view&id=10hG37eS_C_D_mV7dFEP3Y-nTe5UZTCvN",
         dob: "22/09/2006",
         hobbies: ["Cyber-research", "Open Source Contributing", "Tech Blogging", "Competitive Coding"],
         languages: ["English", "Telugu", "Hindi"]

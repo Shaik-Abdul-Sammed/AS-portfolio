@@ -7,16 +7,26 @@ const ThemeCustomizer = () => {
     const [activeTheme, setActiveTheme] = useState('cyan');
 
     const themes = [
-        { id: 'cyan', color: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)' },
-        { id: 'purple', color: '#a855f7', glow: 'rgba(168, 85, 247, 0.4)' },
-        { id: 'pink', color: '#ec4899', glow: 'rgba(236, 72, 153, 0.4)' },
-        { id: 'emerald', color: '#10b981', glow: 'rgba(16, 185, 129, 0.4)' }
+        { id: 'cyan', color: '#06b6d4', rgb: '6 182 212', glow: 'rgba(6, 182, 212, 0.4)' },
+        { id: 'purple', color: '#a855f7', rgb: '168 85 247', glow: 'rgba(168, 85, 247, 0.4)' },
+        { id: 'pink', color: '#ec4899', rgb: '236 72 153', glow: 'rgba(236, 72, 153, 0.4)' },
+        { id: 'emerald', color: '#10b981', rgb: '16 185 129', glow: 'rgba(16, 185, 129, 0.4)' }
     ];
 
     useEffect(() => {
-        document.documentElement.style.setProperty('--primary', themes.find(t => t.id === activeTheme).color);
-        document.documentElement.style.setProperty('--primary-glow', themes.find(t => t.id === activeTheme).glow);
-    }, [activeTheme]);
+        const storedTheme = localStorage.getItem('portfolio_theme');
+        if (storedTheme && themes.some((t) => t.id === storedTheme)) {
+            setActiveTheme(storedTheme);
+        }
+    }, []);
+
+    useEffect(() => {
+        const selected = themes.find((t) => t.id === activeTheme) || themes[0];
+        document.documentElement.style.setProperty('--primary', selected.color);
+        document.documentElement.style.setProperty('--primary-rgb', selected.rgb);
+        document.documentElement.style.setProperty('--primary-glow', selected.glow);
+        localStorage.setItem('portfolio_theme', selected.id);
+    }, [activeTheme, themes]);
 
     return (
         <div className="fixed left-8 bottom-32 z-[100] hidden lg:block">
