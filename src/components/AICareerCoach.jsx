@@ -46,7 +46,7 @@ const AICareerCoach = () => {
             } else if (query.includes('project') || query.includes('work')) {
                 botResponse.content = `Check out Vedascan-AI for Medical diagnosis or CAPSTACK for FinTech. Both showcase his AI integration skills. I can take you to the Projects section if you'd like!`;
             } else if (query.includes('iq') || query.includes('score') || query.includes('analytics')) {
-                botResponse.content = `Abdul's Portfolio IQ is an 88% weighted composite. It's based on Technical Depth, Project Impact (like his SIH Top 50 finish), and Market Readiness. You can see the full breakdown in the Analytics section.`;
+                botResponse.content = `Abdul's Portfolio IQ is an 88% weighted composite. It's based on Technical Depth, Project Impact (like his SIH Internal Hackathon win), and Market Readiness. You can see the full breakdown in the Analytics section.`;
             } else if (query.includes('hobby') || query.includes('hobbies') || query.includes('interest')) {
                 botResponse.content = `Beyond tech, Abdul is into ${personal.hobbies.join(', ')}. He's a competitive spirit who loves tech blogging and open source!`;
             } else if (query.includes('dob') || query.includes('age') || query.includes('born')) {

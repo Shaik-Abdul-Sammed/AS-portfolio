@@ -63,7 +63,7 @@ const CharacterReveal = ({ text, className }) => {
 
 const Hero = () => {
     const { personal } = portfolioData;
-    const typedRole = useTypewriter(['Secure AI Systems Builder', 'DevOps Enthusiast', 'FinTech Innovator', 'SIH Finalist'], 80);
+    const typedRole = useTypewriter(['Secure AI Systems Builder', 'DevOps Enthusiast', 'FinTech Innovator', 'SIH Internal Winner'], 80);
 
     const { scrollY } = useScroll();
     const blobY1 = useTransform(scrollY, [0, 500], [0, 150]);
@@ -180,7 +180,7 @@ const Hero = () => {
                             className="absolute -top-6 -right-6 p-4 rounded-2xl glass border border-white/10 shadow-2xl"
                         >
                             <div className="text-[10px] text-slate-500 uppercase font-black mb-1">Hackathons</div>
-                            <div className="text-sm font-bold text-white">Top 50 SIH</div>
+                            <div className="text-sm font-bold text-white">SIH Internal Winner</div>
                         </motion.div>
 
                         <motion.div

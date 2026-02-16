@@ -202,7 +202,7 @@ export const portfolioData = {
     ],
     achievements: [
         { title: "GSSoC 2025 Exceptional Contributor", desc: "Recognized as an Exceptional Contributor for GirlScript Summer of Code 2025, contributing to critical open-source security modules." },
-        { title: "SIH 2025 Top 50 Finalist", desc: "Secured Top 50 among 200+ teams in the Internal Smart India Hackathon 2025 at RGUKT RKV." },
+        { title: "SIH 2025 Internal Hackathon Winner", desc: "Won the Internal Smart India Hackathon 2025 at RGUKT RKV among 200+ teams." },
         { title: "NayePankh Recognition", desc: "Awarded for exceptional digital fundraising and community mobilization during the 2025 internship." }
     ],
     personalInsights: {
@@ -216,6 +216,6 @@ export const portfolioData = {
         { date: '2025', title: 'NayePankh Intern', type: 'Experience' },
         { date: '2025', title: 'SkillCraft Intern', type: 'Experience' },
         { date: '2025', title: 'GSSoC Contributor', type: 'Achievement' },
-        { date: '2025', title: 'SIH Finalist', type: 'Achievement' },
+        { date: '2025', title: 'SIH Internal Winner', type: 'Achievement' },
     ]
 };

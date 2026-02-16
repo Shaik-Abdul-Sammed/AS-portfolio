@@ -11,6 +11,7 @@ import Achievements from './Achievements';
 import CodePlayground from './CodePlayground';
 import VisitorAnalytics from './VisitorAnalytics';
 import GithubActivity from './GithubActivity';
+import EnhancedMetrics from './EnhancedMetrics';
 
 const AIAnalytics = () => {
     const { analytics } = portfolioData;
@@ -235,6 +236,17 @@ const AIAnalytics = () => {
                         viewport={{ once: true }}
                     >
                         <CodePlayground />
+                    </motion.div>
+                </div>
+
+                {/* Enhanced Metrics Section */}
+                <div className="mt-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <EnhancedMetrics />
                     </motion.div>
                 </div>
 
