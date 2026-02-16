@@ -8,6 +8,9 @@ Professional portfolio website for **Shaik Abdul Sammed**, built with modern Rea
 ## Overview
 AS-Portfolio is an AI-enhanced personal website featuring interactive sections, analytics dashboards, and modular components designed for clarity, speed, and maintainability.
 
+## Project Description
+AS-Portfolio showcases a full-stack-ready frontend architecture with reusable React components, data-driven sections, and a focus on professional storytelling. It blends AI-inspired insights, activity visualizations, and customizable UI elements to present skills, projects, and achievements in a concise, engaging format. The project emphasizes performance, accessibility, and test coverage, making it suitable both as a personal brand site and as a production-grade portfolio template.
+
 ## Live Demo
 - Portfolio: https://as-portfolio-main-b16649f.kuberns.cloud/
 - Demo Video: https://drive.google.com/file/d/1UOLQkxWgFNA8k6pFj3HrAXxI2ZkJsx78/view?usp=drivesdk
