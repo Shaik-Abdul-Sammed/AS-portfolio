@@ -1,4 +1,4 @@
-# AS.AI Portfolio
+# AS-Portfolio
 Professional portfolio website for **Shaik Abdul Sammed**, built with modern React tooling and focused on performance, analytics, and a polished user experience.
 
 [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
@@ -6,7 +6,7 @@ Professional portfolio website for **Shaik Abdul Sammed**, built with modern Rea
 [![Vitest](https://img.shields.io/badge/Vitest-729B1B?style=for-the-badge&logo=vitest&logoColor=FCC72B)](https://vitest.dev/)
 
 ## Overview
-AS.AI Portfolio is an AI-enhanced personal website featuring interactive sections, analytics dashboards, and modular components designed for clarity, speed, and maintainability.
+AS-Portfolio is an AI-enhanced personal website featuring interactive sections, analytics dashboards, and modular components designed for clarity, speed, and maintainability.
 
 ## Live Demo
 - Portfolio: https://as-portfolio-main-b16649f.kuberns.cloud/
