@@ -21,6 +21,7 @@
 
 ## Deployed at :  [AS-Portfolio](https://as-portfolio-main-b16649f.kuberns.cloud/)
 - Use kuberns for easy deployment -- [Kuberns](https://kuberns.com/) 
+- Demo video --[Video](https://drive.google.com/file/d/1UOLQkxWgFNA8k6pFj3HrAXxI2ZkJsx78/view?usp=drivesdk)
 ## 📁 Project Core Structure
 Detailed architecture of the codebase, optimized for maintainability and modular growth:
 
