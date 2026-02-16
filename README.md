@@ -1,24 +1,27 @@
 # AS.AI Portfolio
 Professional portfolio website for **Shaik Abdul Sammed**, built with modern React tooling and focused on performance, analytics, and a polished user experience.
 
-[![Vite](https://img.shields.io/badge/Engineered_with-Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/Powered_by-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vitest](https://img.shields.io/badge/Tested_with-Vitest-729B1B?style=for-the-badge&logo=vitest&logoColor=FCC72B)](https://vitest.dev/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vitest](https://img.shields.io/badge/Vitest-729B1B?style=for-the-badge&logo=vitest&logoColor=FCC72B)](https://vitest.dev/)
+
+## Overview
+AS.AI Portfolio is an AI-enhanced personal website featuring interactive sections, analytics dashboards, and modular components designed for clarity, speed, and maintainability.
 
 ## Live Demo
 - Portfolio: https://as-portfolio-main-b16649f.kuberns.cloud/
-
-## Demo Video (Observability)
-- Watch: https://drive.google.com/file/d/1UOLQkxWgFNA8k6pFj3HrAXxI2ZkJsx78/view?usp=drivesdk
+- Demo Video: https://drive.google.com/file/d/1UOLQkxWgFNA8k6pFj3HrAXxI2ZkJsx78/view?usp=drivesdk
 
 ## Features
-- AI-powered career insights and analytics
-- Smart project recommendations and skill gap analysis
-- Resume customization and career coaching modules
-- Live GitHub activity and coding activity widgets
-- Smooth UI interactions, cursor effects, and theme customization
-- Analytics dashboard for visitor insights
-- Comprehensive testing setup with Vitest
+| Feature | Description | Status |
+| --- | --- | --- |
+| AI Insights | Career insights and analytics | ✅ Implemented |
+| Smart Recommendations | Skill-gap and project suggestions | ✅ Implemented |
+| Resume Customizer | Tailored resume workflows | ✅ Implemented |
+| Activity Widgets | GitHub and coding activity feeds | ✅ Implemented |
+| UI Effects | Smooth interactions, cursor glow, theming | ✅ Implemented |
+| Visitor Analytics | Engagement dashboards | ✅ Implemented |
+| Testing Suite | Unit and component tests | ✅ Implemented |
 
 ## Portfolio Sections (Tabular)
 | Section | Description | Component |
@@ -40,8 +43,11 @@ Professional portfolio website for **Shaik Abdul Sammed**, built with modern Rea
 | Contact | Contact details and form | Contact.jsx |
 
 ## Tech Stack
+**Frontend**
 - React + Vite
 - CSS (custom styling and effects)
+
+**Testing**
 - Vitest + React Testing Library
 
 ## Project Structure
@@ -64,7 +70,7 @@ Professional portfolio website for **Shaik Abdul Sammed**, built with modern Rea
 └── package.json
 ```
 
-## Development
+## Quick Start
 ```bash
 npm install
 npm run dev
