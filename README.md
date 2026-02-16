@@ -19,6 +19,8 @@
 - 🔒 **Type Safety** - Full JSX validation
 - 📈 **Code Coverage** - Core analytics & components covered
 
+## Deployed at : https://as-portfolio-main-b16649f.kuberns.cloud/
+- Use kuberns for easy deployment -- https://kuberns.com/
 ## 📁 Project Core Structure
 Detailed architecture of the codebase, optimized for maintainability and modular growth:
 
