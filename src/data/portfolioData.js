@@ -10,7 +10,7 @@ export const portfolioData = {
         summary: "E2 CSE Student at RGUKT RKV exploring DevOps Security and FinTech. Passionate about automating secure pipelines and building intelligent infrastructure.",
         profileImage: "/assets/PASSPHOTO.jpg",
         socials: [
-            { name: 'GitHub', icon: Github, href: 'https://github.com/Abdul9010150809' },
+            { name: 'GitHub', icon: Github, href: 'https://github.com/Shaik-Abdul-Sammed' },
             { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/' },
             { name: 'LeetCode', icon: Code2, href: 'https://leetcode.com/' },
             { name: 'HackerRank', icon: Terminal, href: 'https://hackerrank.com/' }
@@ -79,7 +79,7 @@ export const portfolioData = {
             title: "CAPSTACK",
             description: "Smart financial safety net and dashboard with real-time risk assessment.",
             tech: ["Next.js", "FastAPI", "PostgreSQL", "Scikit-learn"],
-            github: "https://github.com/Abdul9010150809/capstack",
+            github: "https://github.com/Shaik-Abdul-Sammed/capstack",
             live: "#",
             category: "FinTech",
             impact: {
@@ -93,7 +93,7 @@ export const portfolioData = {
             title: "DevOps-Fraud-Shield",
             description: "AI-driven anomaly detection for CI/CD pipelines to prevent supply chain attacks.",
             tech: ["Python", "GitHub Actions", "Docker", "AI/ML"],
-            github: "https://github.com/Abdul9010150809/DevOps-Fraud-Shield",
+            github: "https://github.com/Shaik-Abdul-Sammed/DevOps-Fraud-Shield",
             live: "#",
             category: "Security",
             impact: {
@@ -107,8 +107,8 @@ export const portfolioData = {
             title: "Stone Paper Scissors",
             description: "A classic interactive game built with modern JavaScript and smooth CSS animations.",
             tech: ["JavaScript", "HTML5", "CSS3"],
-            github: "https://github.com/Abdul9010150809/stone-paper-scissors",
-            live: "https://abdul9010150809.github.io/stone-paper-scissors/",
+            github: "https://github.com/Shaik-Abdul-Sammed/stone-paper-scissors",
+            live: "https://Shaik-Abdul-Sammed.github.io/stone-paper-scissors/",
             category: "Mini Projects",
             impact: {
                 stars: 2,
@@ -121,7 +121,7 @@ export const portfolioData = {
             title: "Vedascan-AI",
             description: "Medical AI diagnostic system for analyzing health records and predicting risks.",
             tech: ["React", "FastAPI", "TensorFlow", "PostgreSQL"],
-            github: "https://github.com/Abdul9010150809/Vedascan-AI",
+            github: "https://github.com/Shaik-Abdul-Sammed/Vedascan-AI",
             live: "#",
             category: "Medical AI",
             impact: {
@@ -135,7 +135,7 @@ export const portfolioData = {
             title: "cropyield-pro",
             description: "Agri-tech platform for predicting crop yields using satellite data and AI.",
             tech: ["Python", "Flask", "Azure ML", "Leaflet"],
-            github: "https://github.com/Abdul9010150809/cropyield-pro",
+            github: "https://github.com/Shaik-Abdul-Sammed/cropyield-pro",
             live: "#",
             category: "Agri-Tech",
             impact: {
@@ -149,7 +149,7 @@ export const portfolioData = {
             title: "GitFolioScore",
             description: "DevOps tool to calculate repository health and contributor impact metrics.",
             tech: ["Node.js", "GitHub API", "Redis", "Chart.js"],
-            github: "https://github.com/Abdul9010150809/GitFolioScore",
+            github: "https://github.com/Shaik-Abdul-Sammed/GitFolioScore",
             live: "#",
             category: "DevOps",
             impact: {
