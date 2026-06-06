@@ -1,93 +1,110 @@
 # AS-Portfolio
-Professional portfolio website for **Shaik Abdul Sammed**, built with modern React tooling and focused on performance, analytics, and a polished user experience.
 
-[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vitest](https://img.shields.io/badge/Vitest-729B1B?style=for-the-badge&logo=vitest&logoColor=FCC72B)](https://vitest.dev/)
+A modern, high-performance personal portfolio website for **Shaik Abdul Sammed**, designed to showcase technical skills, projects, achievements, and AI-driven insights in a polished and professional format.
+
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
 
 ## Overview
-AS-Portfolio is an AI-enhanced personal website featuring interactive sections, analytics dashboards, and modular components designed for clarity, speed, and maintainability.
 
-## Project Description
-AS-Portfolio showcases a full-stack-ready frontend architecture with reusable React components, data-driven sections, and a focus on professional storytelling. It blends AI-inspired insights, activity visualizations, and customizable UI elements to present skills, projects, and achievements in a concise, engaging format. The project emphasizes performance, accessibility, and test coverage, making it suitable both as a personal brand site and as a production-grade portfolio template.
+AS-Portfolio is a responsive, production-ready portfolio application built with React and Vite. It combines elegant UI design, reusable component architecture, analytics-driven sections, and AI-inspired portfolio insights to present a compelling professional brand online.
 
-## Live Demo
-- Portfolio: https://as-portfolio-main-b16649f.kuberns.cloud/
-- Demo Video: https://drive.google.com/file/d/1UOLQkxWgFNA8k6pFj3HrAXxI2ZkJsx78/view?usp=drivesdk
+## Highlights
 
-## Features
-| Feature | Description | Status |
-| --- | --- | --- |
-| AI Insights | Career insights and analytics | ✅ Implemented |
-| Smart Recommendations | Skill-gap and project suggestions | ✅ Implemented |
-| Resume Customizer | Tailored resume workflows | ✅ Implemented |
-| Activity Widgets | GitHub and coding activity feeds | ✅ Implemented |
-| UI Effects | Smooth interactions, cursor glow, theming | ✅ Implemented |
-| Visitor Analytics | Engagement dashboards | ✅ Implemented |
-| Testing Suite | Unit and component tests | ✅ Implemented |
+- Professional personal branding and storytelling
+- Interactive project and skills showcase
+- AI-enhanced analytics and recommendations
+- Responsive layout optimized for desktop and mobile
+- Automated testing and production build validation
 
-## Portfolio Sections (Tabular)
-| Section | Description | Component |
-| --- | --- | --- |
-| Hero | Intro banner with key identity and call-to-action | Hero.jsx |
-| About | Summary of background and focus areas | About.jsx |
-| Skills | Technical skills and proficiency highlights | Skills.jsx |
-| Projects | Featured work and project showcase | Projects.jsx |
-| Achievements | Awards, recognitions, and milestones | Achievements.jsx |
-| Timeline | Education and experience timeline | Timeline.jsx |
-| AI Analytics | Skill scoring, trends, and insights | AIAnalytics.jsx |
-| AI Career Coach | Personalized career guidance and tips | AICareerCoach.jsx |
-| Resume Customizer | Tailored resume builder workflows | ResumeCustomizer.jsx |
-| Smart Project Recommender | Suggested projects based on profile | SmartProjectRecommender.jsx |
-| GitHub Activity | GitHub contributions and stats | GithubActivity.jsx |
-| Coding Activity | Daily/weekly coding activity feed | CodingActivity.jsx |
-| Visitor Analytics | Engagement metrics and dashboards | VisitorAnalytics.jsx |
-| Blog | Posts and articles section | Blog.jsx |
-| Contact | Contact details and form | Contact.jsx |
+## Key Features
+
+| Feature | Description |
+| --- | --- |
+| AI Analytics | Portfolio IQ, trend analysis, and performance metrics |
+| Career Guidance | Smart recommendations and career-focused insights |
+| Project Showcase | Featured repositories, impact summaries, and live links |
+| Resume Customizer | Tailored resume-related workflows |
+| Visitor Insights | Engagement and activity visualization |
+| Modern UI | Smooth animations, theming, and interactive components |
 
 ## Tech Stack
-**Frontend**
-- React + Vite
-- CSS (custom styling and effects)
 
-**Testing**
-- Vitest + React Testing Library
+### Frontend
+- React 19
+- Vite 7
+- Tailwind CSS
+- Framer Motion
+- Recharts
+- Lucide Icons
+
+### Quality & Testing
+- Vitest
+- React Testing Library
+- JSDOM
 
 ## Project Structure
+
 ```text
 .
 ├── src/
-│   ├── components/
-│   ├── data/
-│   ├── utils/
-│   ├── tests/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── public/
-├── Dockerfile
-├── kuberns.yml
-├── vitest.config.js
-├── vite.config.js
-├── TEST_REPORT.md
-└── package.json
+│   ├── components/     # Reusable UI sections and views
+│   ├── data/           # Portfolio content and project metadata
+│   ├── utils/          # Analytics and helper logic
+│   └── tests/          # Unit and component tests
+├── public/             # Static assets and PWA manifest
+├── .github/workflows/  # GitHub Pages deployment workflow
+├── Dockerfile          # Container deployment support
+├── vite.config.js      # Vite configuration
+├── vitest.config.js    # Test configuration
+└── TEST_REPORT.md      # Validation and test summary
 ```
 
-## Quick Start
+## Getting Started
+
+### Prerequisites
+- Node.js 18 or higher
+- npm 9 or higher
+
+### Installation
+
 ```bash
 npm install
+```
+
+### Development Server
+
+```bash
 npm run dev
 ```
 
-## Testing
+### Production Build
+
 ```bash
-npm test
-npm run test:ui
-npm run test:coverage
+npm run build
 ```
 
-See [TEST_REPORT.md](TEST_REPORT.md) for details.
+### Testing
+
+```bash
+npm test -- --run
+```
+
+## Deployment
+
+This project is configured for GitHub Pages deployment through GitHub Actions. After enabling Pages in the repository settings, the workflow in `.github/workflows/deploy.yml` will publish the production build automatically on every push to `main`.
+
+## Live Links
+
+- Portfolio website: https://as-portfolio-main-b16649f.kuberns.cloud/
+- GitHub repository: https://github.com/Shaik-Abdul-Sammed/AS-portfolio
 
 ## Contact
+
+For collaboration, feedback, or project-related inquiries:
+
 - Email: samm41236@gmail.com
-- LinkedIn: https://linkedin.com/
+- GitHub: https://github.com/Shaik-Abdul-Sammed
+
