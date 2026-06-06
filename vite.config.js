@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '/AS-portfolio/',
     server: {
         allowedHosts: ['as-portfolio-main-b16649f.kuberns.cloud']
     },
